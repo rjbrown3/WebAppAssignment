@@ -46,9 +46,9 @@
         letterGrade = "E";
     }
 
-    if ((assignmentGrade < 100) && (groupProjectGrade < 100) && (quizGrade < 100) &&
-            (examGrade < 100) && (intexGrade < 100) && (assignmentGrade > 0) &&
-            (groupProjectGrade > 0) && (quizGrade > 0) && (examGrade > 0) && (intexGrade > 0)) {
+    if ((assignmentGrade <= 100) && (groupProjectGrade <= 100) && (quizGrade <= 100) &&
+            (examGrade <= 100) && (intexGrade <= 100) && (assignmentGrade >= 0) &&
+            (groupProjectGrade >= 0) && (quizGrade >= 0) && (examGrade >= 0) && (intexGrade >= 0)) {
         //message with user's final grade percentage and letter grade if each field is in a valid range
         alert("Your final grade is " + finalGrade + "% which is an " + letterGrade);
     }
