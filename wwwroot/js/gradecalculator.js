@@ -1,14 +1,10 @@
-﻿//create grade variable when user clicks the calculate grade button
-var grade = document.getElementById("submitButton");
-
-//add an event listener that executes this function
-grade.addEventListener("click", function () {
+﻿$("#submitButton").click( function () {
     //get all the grade variables the user inputs for each category
-    var assignmentGrade = document.getElementById("assignment").value;
-    var groupProjectGrade = document.getElementById("groupProject").value;
-    var quizGrade = document.getElementById("quiz").value;
-    var examGrade = document.getElementById("exam").value;
-    var intexGrade = document.getElementById("intex").value;
+    var assignmentGrade = $("#assignment").val();
+    var groupProjectGrade = $("#groupProject").val();
+    var quizGrade = $("#quiz").val();
+    var examGrade = $("#exam").val();
+    var intexGrade = $("#intex").val();
     var finalGrade = (parseFloat(assignmentGrade) + parseFloat(groupProjectGrade) + parseFloat(quizGrade) + parseFloat(examGrade) + parseFloat(intexGrade));
     var letterGrade = " ";
 
@@ -50,6 +46,14 @@ grade.addEventListener("click", function () {
         letterGrade = "E";
     }
 
-    //message with user's final grade percentage and letter grade
-    alert("Your final grade is " + finalGrade + "% which is an " + letterGrade);
+    if ((assignmentGrade < 100) && (groupProjectGrade < 100) && (quizGrade < 100) &&
+            (examGrade < 100) && (intexGrade < 100) && (assignmentGrade > 0) &&
+            (groupProjectGrade > 0) && (quizGrade > 0) && (examGrade > 0) && (intexGrade > 0)) {
+        //message with user's final grade percentage and letter grade if each field is in a valid range
+        alert("Your final grade is " + finalGrade + "% which is an " + letterGrade);
+    }
+    else {
+        //otherwise prompt user to enter valid inputs
+        alert("Enter in a valid field (between 0-100) to calculate your grade");
+    }
 });

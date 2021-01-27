@@ -1,0 +1,32 @@
+﻿@*
+*@
+@{
+    ViewBag.Title = "Calculate your Grade";
+}
+@model WebAppAssignment.Models.GradeCalcModel
+
+<body>
+    <!--Grade calculator-->
+    <form method="post">
+        <label>Assignments (50%):</label>
+        <input id="assignment" asp-for="assignment"/>
+        <br />
+        <label>Group Project (10%):</label>
+        <input id="groupProject" asp-for="groupProject"/>
+        <br />
+        <label>Quizzes (10%):</label>
+        <input id="quiz" asp-for="quiz"/>
+        <br />
+        <label>Exams(20%):</label>
+        <input id="exam" asp-for="exam"/>
+        <br />
+        <label>INTEX (10%):</label>
+        <input id="intex" asp-for="intex"/>
+        <br />
+        <br />
+        <input type="submit" value="Calculate Grade" id="submitButton" class="submit-button" />
+        <br />
+        <div asp-validation-summary="All"></div>
+        <br />
+    </form>
+</body>
